@@ -1,0 +1,5 @@
+name: librealsense-unit-test-snap
+version: 1.11.0-snap1
+summary: unit test snap of librealsense
+description: unit test snap of librealsense
+confinement: strict
