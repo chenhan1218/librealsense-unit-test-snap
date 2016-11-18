@@ -3,3 +3,60 @@ version: 1.11.0-snap1
 summary: unit test snap of librealsense
 description: unit test snap of librealsense
 confinement: strict
+
+apps:
+  F200-live-test:
+    command: va-launch bin/F200-live-test
+    plugs:
+      - unity7
+      - camera
+      - network-bind
+      - opengl
+  LR200-live-test:
+    command: va-launch bin/LR200-live-test
+    plugs:
+      - unity7
+      - camera
+      - network-bind
+      - opengl
+  R200-live-test:
+    command: va-launch bin/R200-live-test
+    plugs:
+      - unity7
+      - camera
+      - network-bind
+      - opengl
+  SR300-live-test:
+    command: va-launch bin/SR300-live-test
+    plugs:
+      - unity7
+      - camera
+      - network-bind
+      - opengl
+  ZR300-live-test:
+    command: va-launch bin/ZR300-live-test
+    plugs:
+      - unity7
+      - camera
+      - network-bind
+      - realsense
+      - opengl
+  offline-test:
+    command: va-launch bin/offline-test
+    plugs:
+      - unity7
+      - camera
+      - network-bind
+      - opengl
+
+parts:
+  application:
+    plugin: make
+    source: .
+    after: [librealsense] # A wiki part
+    build-packages: [pkg-config, libglfw3-dev]
+  middleware:
+    plugin: dump
+    source: va-launch/
+    organize:
+      va-launch: bin/va-launch
