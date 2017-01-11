@@ -1,5 +1,5 @@
 name: librealsense-unit-test-snap
-version: 1.11.0-snap1
+version: 1.12.0-snap1
 summary: unit test snap of librealsense
 description: unit test snap of librealsense
 confinement: strict
@@ -40,13 +40,6 @@ apps:
       - camera
       - network-bind
       - realsense
-      - opengl
-  offline-test:
-    command: va-launch bin/offline-test
-    plugs:
-      - unity7
-      - camera
-      - network-bind
       - opengl
 
 parts:
